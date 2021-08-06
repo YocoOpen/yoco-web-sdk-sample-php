@@ -5,8 +5,8 @@ This repo provides some samples of how to implement the Yoco payment gateway on 
   * [vanilla-app](#vanilla-app "vanilla-app"), a simple, low-dependancy php stand alone implementation
   * [laravel-app](#laravel-app "laravel-app"), a small, laravel implementation
 
-The vanilla-app implementation uses the [yoco/yoco-php](https://github.com/yoco/yoco-php) 
-composer package and the laravel-app implementation uses the [yoco/yoco-php-laravel](https://github.com/yoco/yoco-php-laravel) composer package.
+The vanilla-app implementation uses the [yoco/yoco-php](https://github.com/YocoOpen/yoco-php) 
+composer package and the laravel-app implementation uses the [yoco/yoco-php-laravel](https://github.com/YocoOpen/yoco-php-laravel) composer package.
 
 
 ## Demo
@@ -15,7 +15,7 @@ Once you have run one of the samples below, you will be able to see demo's of th
 
 | Inline Payment | Popup Payment |
 | ------ | ------ |
-| ![Inline Payment](https://gitlab.com/yoco/online-payments/yoco-web-sdk-sample-php/-/raw/develop/docs/inline.gif) | ![Popup Payment](https://gitlab.com/yoco/online-payments/yoco-web-sdk-sample-php/-/raw/develop/docs/popup.gif) |
+| ![Inline Payment](https://raw.githubusercontent.com/YocoOpen/yoco-web-sdk-sample-php/main/docs/inline.gif) | ![Popup Payment](https://raw.githubusercontent.com/YocoOpen/yoco-web-sdk-sample-php/main/docs/popup.gif) |
 
 <a name="vanilla-app"></a>
 ## Vanilla PHP Implementation
@@ -23,7 +23,7 @@ Once you have run one of the samples below, you will be able to see demo's of th
 To run the stand alone php implementation, clone this repository, run [composer](https://getcomposer.org/) install and run the built in PHP server as follows
 
 ```bash
-git clone https://github.com/yoco/yoco-web-sdk-sample-php.git
+git clone https://github.com/YocoOpen/yoco-web-sdk-sample-php.git
 cd yoco-web-sdk-sample-php/vanilla-app
 composer install
 php -S localhost:8000
@@ -76,6 +76,6 @@ The following files perform the following functions
 
 The libraries used in these implementations have their own documentation and are as follows
 
-  * [yoco/yoco-php](https://github.com/yoco/yoco-php) for the vanilla php demo
-  * [yoco/yoco-php-laravel](https://github.com/yoco/yoco-php-laravel) for the laravel demo
+  * [yoco/yoco-php](https://github.com/YocoOpen/yoco-php) for the vanilla php demo
+  * [yoco/yoco-php-laravel](https://github.com/YocoOpen/yoco-php-laravel) for the laravel demo
   
