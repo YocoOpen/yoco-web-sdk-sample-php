@@ -1,0 +1,6 @@
+{
+  "minimum-stability": "dev",
+  "require": {
+    "yoco/yoco-php": "0.1.0-beta"
+  }
+}
