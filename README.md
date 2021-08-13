@@ -1,26 +1,29 @@
 # Yoco Sample Implementations
 
-This repo provides some samples of how to implement the Yoco payment gateway on your website.  The following implementations are provided
+This project provides PHP sample implementations that show how to integrate our payment gateway into custom built websites.
 
-  * [vanilla-app](#vanilla-app "vanilla-app"), a simple, low-dependancy php stand alone implementation
-  * [laravel-app](#laravel-app "laravel-app"), a small, laravel implementation
+The following implementations are provided
 
-The vanilla-app implementation uses the [yoco/yoco-php](https://github.com/YocoOpen/yoco-php) 
-composer package and the laravel-app implementation uses the [yoco/yoco-php-laravel](https://github.com/YocoOpen/yoco-php-laravel) composer package.
+  * [vanilla-app](#vanilla-app "vanilla-app"): a simple stand-alone PHP implementation
+  * [laravel-app](#laravel-app "laravel-app"): a basic Laravel implementation
+
+The `vanilla-app` uses our simple PHP client library ([yoco/yoco-php](https://github.com/YocoOpen/yoco-php)), while the `laravel-app` uses a wrapper for the client library ([yoco/yoco-php-laravel](https://github.com/YocoOpen/yoco-php-laravel)). Both libraries are available as composer packages.
 
 
-## Demo
+## Inline and Popup Demos
 
-Once you have run one of the samples below, you will be able to see demo's of the 2 frontend options interacting with the PHP backend.
+Running the samples below will show demos for the inline and popup card forms.
 
-| Inline Payment | Popup Payment |
+| Inline Form | Popup Form |
 | ------ | ------ |
 | ![Inline Payment](https://raw.githubusercontent.com/YocoOpen/yoco-web-sdk-sample-php/main/docs/inline.gif) | ![Popup Payment](https://raw.githubusercontent.com/YocoOpen/yoco-web-sdk-sample-php/main/docs/popup.gif) |
 
-<a name="vanilla-app"></a>
-## Vanilla PHP Implementation
+On the right-hand side of the screen we provide a panel with test credit card details, the currently configured API keys, and an activity monitor for logging out debug information.
 
-To run the stand alone php implementation, clone this repository, run [composer](https://getcomposer.org/) install and run the built in PHP server as follows
+<a name="vanilla-app"></a>
+## Vanilla Implementation
+
+To run the stand-alone PHP implementation, clone this repository, run [composer](https://getcomposer.org/) install, and run the built-in PHP server as follows:
 
 ```bash
 git clone https://github.com/YocoOpen/yoco-web-sdk-sample-php.git
@@ -28,28 +31,29 @@ cd yoco-web-sdk-sample-php/vanilla-app
 composer install
 php -S localhost:8000
 ````
-Now use your browser to go to http://localhost:8000 and run through the demo using the inline and popup payment variants.
+Now visit http://localhost:8000 in your browser and try out the demos!
 
-### Configuring Keys
+### Configuring API Keys
 
-By default, the implementation uses the test keys from (https://developer.yoco.com/online/resources/testing-info).  These keys can be changed by editing
+By default, the implementation uses our documentation\'s [global test keys](https://developer.yoco.com/online/resources/testing-info).  These keys can be changed by editing the values in
+`lib/config.php`.
 
-`lib/config.php`
+### Main Files
 
-The following files perform the following functions
+Here is a description of the main files in the `vanilla-app`:
 
-  * `yoco/demo/chooser/index.php` loads the frontend chooser
-  * `yoco/demo/inline/index.php` loads the inline payment demo
-  * `yoco/demo/popup/index.php` loads the popup payment demo
-  * `yoco/charge/index.php` handles the charge api call from the above demo payment pages
+  * `yoco/demo/chooser/index.php`: the landing page
+  * `yoco/demo/inline/index.php`: the inline payment form
+  * `yoco/demo/popup/index.php`: the popup payment form
+  * `yoco/charge/index.php`: handles the back-end charge call
 
 <a name="laravel-app"></a>
-## Laravel PHP Implementation
+## Laravel Implementation
 
-To run the laravel php implementation, clone this repository, run [composer](https://getcomposer.org/) install, setup environment and use artisan to run the internal php server
+To run the Laravel implementation, clone this repository, run [composer](https://getcomposer.org/) install, setup the environment, and use `artisan` to run the internal PHP server:
 
 ```bash
-git clone https://github.com/yoco/yoco-web-sdk-sample-php.git
+git clone https://github.com/YocoOpen/yoco-web-sdk-sample-php.git
 cd yoco-web-sdk-sample-php/laravel-app
 composer install
 cp .env.example .env
@@ -57,25 +61,27 @@ php artisan key:generate
 php artisan serve
 ````
 
-Now use your browser to go to http://localhost:8000 and run through the demo using the inline and popup payment variants.
+Now visit http://localhost:8000 in your browser and try out the demos!
 
-### Configuring Keys
+### Configuring API Keys
 
-By default, the implementation uses the test keys from (https://developer.yoco.com/online/resources/testing-info).  These keys can be changed by editing
+By default, the implementation uses our documentation\'s [global test keys](https://developer.yoco.com/online/resources/testing-info).  These keys can be changed by editing the values in
+`config/yoco.php`.
 
-`config/yoco.php`
+### Main Files
 
-The following files perform the following functions
+Here is a description of the main files in the `laravel-app`:
 
-  * `resources/views/yoco/demo/chooser.blade.php` contains the frontend chooser
-  * `resources/views/yoco/demo/inline.blade.php` contains the inline payment demo
-  * `resources/views/yoco/demo/popup.blade.php` contains the popup payment demo
-  * `app/Http/Controllers/ChargeController.php` handles the charge api call from the above demo payment pages
+  * `resources/views/yoco/demo/chooser.blade.php`: the landing page
+  * `resources/views/yoco/demo/inline.blade.php`: the inline payment form
+  * `resources/views/yoco/demo/popup.blade.php`: the popup payment form
+  * `app/Http/Controllers/ChargeController.php`: handles the back-end charge call
+
 
 ## Libraries
 
-The libraries used in these implementations have their own documentation and are as follows
+The client libraries used in these implementations have their own documentation, which can be found at:
 
-  * [yoco/yoco-php](https://github.com/YocoOpen/yoco-php) for the vanilla php demo
-  * [yoco/yoco-php-laravel](https://github.com/YocoOpen/yoco-php-laravel) for the laravel demo
+  * [yoco/yoco-php](https://github.com/YocoOpen/yoco-php)
+  * [yoco/yoco-php-laravel](https://github.com/YocoOpen/yoco-php-laravel)
   
